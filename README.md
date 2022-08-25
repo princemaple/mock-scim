@@ -31,7 +31,7 @@ Go to `https://firezone-saml.loca.lt` and click the button the enable the tunnel
 
 ## Provision / Deprovision testing data
 
-I created a `Jane Smith` on my Okta account.
+I created a `Jane Smith` on my Okta account. Instructions about configuration Okta can be found [here](docs/okta-config.md)
 
 ## Provision request
 
