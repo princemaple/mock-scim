@@ -18,6 +18,8 @@ npm i -g localtunnel
 lt -p 4001 -s firezone-saml
 ```
 
+Go to `https://firezone-saml.loca.lt` and click the button the enable the tunnel.
+
 ## Users Index
 
 `GET /Users` - mocked with GitHub example, see [code](/lib/scim.ex#L16)
