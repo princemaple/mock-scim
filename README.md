@@ -20,16 +20,16 @@ lt -p 4001 -s firezone-saml
 
 ## Users Index
 
-`GET /Users` - mocked with GitHub example
+`GET /Users` - mocked with GitHub example, see [code](/blob/main/lib/scim.ex#L16)
 
 ## User Show
 
-`GET /Users/:id` - mocked with GitHub example
+`GET /Users/:id` - mocked with GitHub example, see [code](/blob/main/lib/scim.ex#L62)
 
 
 ## Provision / Deprovision testing data
 
-I created a `Jane Smith` on my Okta account
+I created a `Jane Smith` on my Okta account.
 
 ## Provision request
 
