@@ -20,11 +20,11 @@ lt -p 4001 -s firezone-saml
 
 ## Users Index
 
-`GET /Users` - mocked with GitHub example, see [code](/blob/main/lib/scim.ex#L16)
+`GET /Users` - mocked with GitHub example, see [code](/lib/scim.ex#L16)
 
 ## User Show
 
-`GET /Users/:id` - mocked with GitHub example, see [code](/blob/main/lib/scim.ex#L62)
+`GET /Users/:id` - mocked with GitHub example, see [code](/lib/scim.ex#L62)
 
 
 ## Provision / Deprovision testing data
