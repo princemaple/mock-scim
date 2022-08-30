@@ -38,8 +38,45 @@ I created a `Jane Smith` on my Okta account. Instructions about configuration Ok
 Okta performs the following sequence
 
 1. `GET /Users?startIndex=1&count=100&filter=userName eq "..."` first
-1. `GET /Users/:id`
-1. finally `PUT /Users/:id` with IdP data merged with whatever returned from `GET /Users/:id`
+
+If empty list was returned, i.e.
+
+```json
+{
+  "schemas": [
+    "urn:ietf:params:scim:api:messages:2.0:ListResponse"
+  ],
+  "totalResults": 0,
+  "itemsPerPage": 0,
+  "startIndex": 0,
+  "Resources": []
+}
+```
+
+It then
+
+2. `POST /Users` to create the user
+
+On the other hand, if the returned response contains any result, e.g.
+
+```json
+{
+  "schemas": [
+    "urn:ietf:params:scim:api:messages:2.0:ListResponse"
+  ],
+  "totalResults": 1,
+  "itemsPerPage": 1,
+  "startIndex": 1,
+  "Resources": [
+    {...}
+  ]
+}
+```
+
+It proceeds to
+
+2. `GET /Users/:id`
+3. finally `PUT /Users/:id` with IdP data merged with whatever returned from `GET /Users/:id`
 
 `PUT` - body params is IdP data merged with response of `GET /Users/:id returns`
 
@@ -145,7 +182,7 @@ Okta performs the following:
 
 1. `GET /Users/:id` for the user
 1. `PUT /Users/:id` with `active: false`
-1. Removes the user from the application on, so on re-activation,
+1. Removes the user from the application - that means on re-activation,
 the admin has to add the user to the app again
 
 ```elixir
